@@ -16,7 +16,6 @@ def main():
     output_fpath = Path(args.out).with_suffix(".html") if args.out else\
             Path(input_fpath.stem).with_suffix(".html")
 
-    df = pd.read_excel(input_fpath)
     df = pd.read_csv(input_fpath , sep='\t') if input_fpath.suffix in ['.tsv'] else\
         pd.read_excel(input_fpath) if input_fpath.suffix in ['.xls', '.xlsm', '.xlsx'] else\
         pd.read_csv(input_fpath)
